@@ -77,3 +77,13 @@ output "eks_node_role_arn" {
   description = "EKS node IAM role ARN"
   value       = aws_iam_role.eks_node.arn
 }
+
+output "ecr_repository_url" {
+  description = "ECR repository URL for task-api image"
+  value       = aws_ecr_repository.task_api.repository_url
+}
+
+output "ecr_repository_name" {
+  description = "ECR repository name"
+  value       = aws_ecr_repository.task_api.name
+}
