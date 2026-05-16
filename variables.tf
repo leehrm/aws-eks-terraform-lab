@@ -81,3 +81,9 @@ variable "node_disk_size" {
   type        = number
   default     = 20
 }
+
+variable "ecr_repository_name" {
+  description = "ECR repository name for task-api image"
+  type        = string
+  default     = "task-api"
+}
