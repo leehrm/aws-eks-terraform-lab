@@ -42,3 +42,13 @@ output "private_route_table_id" {
   description = "Created private route table ID"
   value       = aws_route_table.private.id
 }
+
+output "nat_gateway_id" {
+  description = "Created NAT Gateway ID"
+  value       = aws_nat_gateway.main.id
+}
+
+output "nat_eip_public_ip" {
+  description = "Public IP address of NAT Gateway Elastic IP"
+  value       = aws_eip.nat.public_ip
+}
