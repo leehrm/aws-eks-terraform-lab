@@ -31,6 +31,7 @@ VPC
     └── Managed Node Group
 
 Private Subnet에 배치된 EKS Worker Node는 NAT Gateway를 통해 외부 인터넷으로 outbound 통신을 수행.
+```
 
 ## 파일 구조
 ```text
