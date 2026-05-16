@@ -88,3 +88,35 @@ resource "aws_route_table_association" "private" {
   subnet_id      = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private.id
 }
+
+# aws_eip
+# NAT gateway에 붙일 고정 공인 IP 생성
+resource "aws_eip" "nat" {
+  domain = "vpc"
+
+  tags = {
+    Name = "${var.project_name}-nat-eip"
+  }
+}
+
+# aws_nat_gateway.main
+# Public Subnet 1번에 NAT Gateway 생성
+resource "aws_nat_gateway" "main" {
+  allocation_id = aws_eip.nat.id
+  subnet_id     = aws_subnet.public[0].id
+
+  tags = {
+    Name = "${var.project_name}-nat-gw"
+  }
+
+  depends_on = [aws_internet_gateway.main]
+}
+
+# aws_route.private_nat
+# Private Route Table에 0.0.0.0/0 경로 추가
+# Private Subnet 트래픽이 NAT Gateway로 나가게 함
+resource "aws_route" "private_nat" {
+  route_table_id         = aws_route_table.private.id
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = aws_nat_gateway.main.id
+}
