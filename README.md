@@ -1,11 +1,11 @@
 # aws-eks-terraform-lab
-Terraform으로 AWS 기반 EKS 클러스터를 구성하는 실습 프로젝트입니다.
+Terraform으로 AWS 기반 EKS 클러스터를 구성하는 실습 프로젝트.
 
 ## 목적
 이 프로젝트의 목표는 Terraform을 사용하여 AWS 네트워크 리소스와 EKS 클러스터를 코드로 생성하고, 로컬 환경에서 `kubectl`로 EKS 클러스터에 접속.
 
 ## 구성 리소스
-현재 Terraform으로 구성한 주요 리소스는 다음과 같습니다.
+현재 Terraform으로 구성한 주요 리소스는 다음과 같음.
 
 - VPC
 - Public Subnet
