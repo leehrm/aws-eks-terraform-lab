@@ -8,7 +8,37 @@ output "aws_caller_arn" {
   value       = data.aws_caller_identity.current.arn
 }
 
-output "available_azs" {
-  description = "Available availability zones in the selected region"
-  value       = data.aws_availability_zones.available.names
+output "availability_zones" {
+  description = "Availability zones used"
+  value       = local.azs
+}
+
+output "vpc_id" {
+  description = "Created VPC ID"
+  value       = aws_vpc.main.id
+}
+
+output "internet_gateway_id" {
+  description = "Created Internet Gateway ID"
+  value       = aws_internet_gateway.main.id
+}
+
+output "public_subnet_ids" {
+  description = "Created public subnet IDs"
+  value       = aws_subnet.public[*].id
+}
+
+output "private_subnet_ids" {
+  description = "Created private subnet IDs"
+  value       = aws_subnet.private[*].id
+}
+
+output "public_route_table_id" {
+  description = "Created public route table ID"
+  value       = aws_route_table.public.id
+}
+
+output "private_route_table_id" {
+  description = "Created private route table ID"
+  value       = aws_route_table.private.id
 }
