@@ -52,3 +52,28 @@ output "nat_eip_public_ip" {
   description = "Public IP address of NAT Gateway Elastic IP"
   value       = aws_eip.nat.public_ip
 }
+
+output "eks_cluster_name" {
+  description = "EKS cluster name"
+  value       = aws_eks_cluster.main.name
+}
+
+output "eks_cluster_endpoint" {
+  description = "EKS cluster endpoint"
+  value       = aws_eks_cluster.main.endpoint
+}
+
+output "eks_cluster_version" {
+  description = "EKS Kubernetes version"
+  value       = aws_eks_cluster.main.version
+}
+
+output "eks_node_group_name" {
+  description = "EKS managed node group name"
+  value       = aws_eks_node_group.default.node_group_name
+}
+
+output "eks_node_role_arn" {
+  description = "EKS node IAM role ARN"
+  value       = aws_iam_role.eks_node.arn
+}
