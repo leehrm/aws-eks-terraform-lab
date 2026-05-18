@@ -87,3 +87,18 @@ output "ecr_repository_name" {
   description = "ECR repository name"
   value       = aws_ecr_repository.task_api.name
 }
+
+output "ebs_csi_addon_name" {
+  description = "EKS EBS CSI add-on name"
+  value       = aws_eks_addon.ebs_csi.addon_name
+}
+
+output "ebs_csi_role_arn" {
+  description = "IAM role ARN for EBS CSI driver"
+  value       = aws_iam_role.ebs_csi.arn
+}
+
+output "gp3_storage_class_name" {
+  description = "Default gp3 StorageClass name"
+  value       = kubernetes_storage_class_v1.gp3.metadata[0].name
+}
