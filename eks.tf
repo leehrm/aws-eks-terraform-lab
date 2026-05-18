@@ -36,6 +36,8 @@ resource "aws_eks_node_group" "default" {
   instance_types = var.node_instance_types
   disk_size      = var.node_disk_size
 
+  ami_type = var.node_ami_type
+
   scaling_config {
     desired_size = var.node_desired_size
     min_size     = var.node_min_size
@@ -56,4 +58,5 @@ resource "aws_eks_node_group" "default" {
     aws_iam_role_policy_attachment.eks_ecr_readonly,
     aws_route.private_nat
   ]
+
 }

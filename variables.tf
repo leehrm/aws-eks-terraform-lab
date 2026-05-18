@@ -43,7 +43,7 @@ variable "cluster_name" {
 variable "kubernetes_version" {
   description = "EKS Kubernetes version"
   type        = string
-  default     = "1.30"
+  default     = "1.35"
 }
 
 variable "node_group_name" {
@@ -86,4 +86,10 @@ variable "ecr_repository_name" {
   description = "ECR repository name for task-api image"
   type        = string
   default     = "task-api"
+}
+
+variable "node_ami_type" {
+  description = "AMI type for EKS managed node group"
+  type        = string
+  default     = "AL2023_x86_64_STANDARD"
 }
