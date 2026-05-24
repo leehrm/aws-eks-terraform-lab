@@ -1,7 +1,15 @@
-.terraform/
+[200~.terraform/
+**/.terraform/
+
 *.tfstate
 *.tfstate.*
+**/*.tfstate
+**/*.tfstate.*
+
 terraform.tfvars
+**/terraform.tfvars
+
 crash.log
 crash.*.log
 *.tfplan
+**/*.tfplan
