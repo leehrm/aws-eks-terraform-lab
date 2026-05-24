@@ -78,16 +78,6 @@ output "eks_node_role_arn" {
   value       = aws_iam_role.eks_node.arn
 }
 
-output "ecr_repository_url" {
-  description = "ECR repository URL for task-api image"
-  value       = aws_ecr_repository.task_api.repository_url
-}
-
-output "ecr_repository_name" {
-  description = "ECR repository name"
-  value       = aws_ecr_repository.task_api.name
-}
-
 output "ebs_csi_addon_name" {
   description = "EKS EBS CSI add-on name"
   value       = aws_eks_addon.ebs_csi.addon_name

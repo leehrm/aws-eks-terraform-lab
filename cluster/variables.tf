@@ -82,12 +82,6 @@ variable "node_disk_size" {
   default     = 20
 }
 
-variable "ecr_repository_name" {
-  description = "ECR repository name for task-api image"
-  type        = string
-  default     = "task-api"
-}
-
 variable "node_ami_type" {
   description = "AMI type for EKS managed node group"
   type        = string
