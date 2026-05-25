@@ -92,3 +92,28 @@ output "gp3_storage_class_name" {
   description = "Default gp3 StorageClass name"
   value       = kubernetes_storage_class_v1.gp3.metadata[0].name
 }
+
+output "karpenter_controller_role_arn" {
+  description = "IAM role ARN for Karpenter controller"
+  value       = aws_iam_role.karpenter_controller.arn
+}
+
+output "karpenter_node_role_arn" {
+  description = "IAM role ARN for Karpenter managed nodes"
+  value       = aws_iam_role.karpenter_node.arn
+}
+
+output "karpenter_node_instance_profile_name" {
+  description = "Instance profile name for Karpenter managed nodes"
+  value       = aws_iam_instance_profile.karpenter_node.name
+}
+
+output "karpenter_interruption_queue_name" {
+  description = "SQS queue name for Karpenter interruption handling"
+  value       = aws_sqs_queue.karpenter_interruption.name
+}
+
+output "eks_cluster_security_group_id" {
+  description = "EKS cluster security group ID"
+  value       = aws_eks_cluster.main.vpc_config[0].cluster_security_group_id
+}

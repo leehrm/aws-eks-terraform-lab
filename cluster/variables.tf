@@ -87,3 +87,15 @@ variable "node_ami_type" {
   type        = string
   default     = "AL2023_x86_64_STANDARD"
 }
+
+variable "karpenter_version" {
+  description = "Karpenter Helm chart version"
+  type        = string
+  default     = "1.12.1"
+}
+
+variable "karpenter_namespace" {
+  description = "Namespace where Karpenter controller is installed"
+  type        = string
+  default     = "kube-system"
+}
