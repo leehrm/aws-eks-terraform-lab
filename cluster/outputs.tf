@@ -117,3 +117,23 @@ output "eks_cluster_security_group_id" {
   description = "EKS cluster security group ID"
   value       = aws_eks_cluster.main.vpc_config[0].cluster_security_group_id
 }
+
+output "argocd_namespace" {
+  description = "Namespace where ArgoCD is installed"
+  value       = kubernetes_namespace_v1.argocd.metadata[0].name
+}
+
+output "argocd_chart_version" {
+  description = "Installed ArgoCD Helm chart version"
+  value       = var.argocd_chart_version
+}
+
+output "argocd_apps_chart_version" {
+  description = "Installed argocd-apps Helm chart version"
+  value       = var.argocd_apps_chart_version
+}
+
+output "metrics_server_chart_version" {
+  description = "Installed Metrics Server Helm chart version"
+  value       = var.metrics_server_chart_version
+}
