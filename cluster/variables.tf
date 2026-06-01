@@ -99,3 +99,45 @@ variable "karpenter_namespace" {
   type        = string
   default     = "kube-system"
 }
+
+variable "argocd_namespace" {
+  description = "Namespace where ArgoCD is installed"
+  type        = string
+  default     = "argocd"
+}
+
+variable "argocd_chart_version" {
+  description = "ArgoCD Helm chart version"
+  type        = string
+  default     = "9.5.17"
+}
+
+variable "argocd_apps_chart_version" {
+  description = "argocd-apps Helm chart version for bootstrapping root applications"
+  type        = string
+  default     = "2.0.5"
+}
+
+variable "argocd_root_app_repo_url" {
+  description = "GitOps repository URL watched by the ArgoCD root application"
+  type        = string
+  default     = "https://github.com/leehrm/gitops-argocd.git"
+}
+
+variable "argocd_root_app_target_revision" {
+  description = "Git branch watched by the ArgoCD root application"
+  type        = string
+  default     = "deploy/dev"
+}
+
+variable "argocd_root_app_path" {
+  description = "Path in the GitOps repository containing ArgoCD Application manifests"
+  type        = string
+  default     = "clusters/dev/applications"
+}
+
+variable "metrics_server_chart_version" {
+  description = "Metrics Server Helm chart version"
+  type        = string
+  default     = "3.13.0"
+}
