@@ -88,6 +88,26 @@ output "ebs_csi_role_arn" {
   value       = aws_iam_role.ebs_csi.arn
 }
 
+output "external_secrets_role_arn" {
+  description = "IAM role ARN for External Secrets Operator"
+  value       = aws_iam_role.external_secrets.arn
+}
+
+output "external_secrets_role_name" {
+  description = "IAM role name for External Secrets Operator"
+  value       = aws_iam_role.external_secrets.name
+}
+
+output "external_secrets_namespace" {
+  description = "Namespace where External Secrets Operator is installed"
+  value       = var.external_secrets_namespace
+}
+
+output "external_secrets_service_account_name" {
+  description = "ServiceAccount name used by External Secrets Operator"
+  value       = var.external_secrets_service_account_name
+}
+
 output "gp3_storage_class_name" {
   description = "Default gp3 StorageClass name"
   value       = kubernetes_storage_class_v1.gp3.metadata[0].name
