@@ -16,6 +16,23 @@ variable "project_name" {
   default     = "aws-eks-terraform-lab"
 }
 
+variable "external_secrets_namespace" {
+  description = "Namespace where External Secrets Operator is installed"
+  type        = string
+  default     = "external-secrets"
+}
+
+variable "external_secrets_service_account_name" {
+  description = "ServiceAccount name used by External Secrets Operator"
+  type        = string
+  default     = "external-secrets"
+}
+
+variable "secret_container_arns" {
+  description = "Secrets Manager secret container ARNs External Secrets Operator may read"
+  type        = map(string)
+}
+
 variable "vpc_cidr" {
   description = "CIDR block for VPC"
   type        = string
