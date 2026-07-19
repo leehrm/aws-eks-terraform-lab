@@ -16,6 +16,12 @@ variable "project_name" {
   default     = "aws-eks-terraform-lab"
 }
 
+variable "environment_name" {
+  description = "Environment name used for persistent secret container naming"
+  type        = string
+  default     = "dev"
+}
+
 variable "ecr_repository_name" {
   description = "ECR repository name for application image"
   type        = string
