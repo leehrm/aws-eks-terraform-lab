@@ -13,3 +13,7 @@ crash.log
 crash.*.log
 *.tfplan
 **/*.tfplan
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
